@@ -10,3 +10,6 @@ Tipos de Parâmetros:
     Query Params: Enviados após o "?" feitos para filtros ou paginação
     Route Params: Identificar recursos como o id na URL
     Request Body: Usado pra alterar ou criar recursos
+
+JSX 
+    Java Script com codigos HTML dentro deles (codigos XML)
