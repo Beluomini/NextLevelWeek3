@@ -1,26 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-
 import { useNavigation } from '@react-navigation/native';
-
 import logoImg from '../../assets/logo.png';
-
 import styles from './styles';
-
 import api from '../../services/api';
 
 export default function Incidents() {
-    const navigation = useNavigation();
-    // usado para navegar entre as pags
-
+    const navigation = useNavigation(); // usado para navegar entre as pags
     const [incidents, setIncidents] = useState([]);
     const [total, setTotal] = useState(0);
-
-
     const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(false);
-    // infinit scroll
+    const [loading, setLoading] = useState(false); // infinit scroll
     
     function navigateToDetail(incident){
         navigation.navigate('Details', {incident});
@@ -30,13 +21,10 @@ export default function Incidents() {
         if(loading){
             return;
         }
-
         if(total > 0 && incidents.length == total) {
             return;
         }
-
         setLoading(true);
-
         const response = await api.get('incidents', {
             params: {page}
         });
@@ -52,19 +40,22 @@ export default function Incidents() {
     }, [])
     return (
         <View style={styles.container}>
+
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <Text style={styles.headerText}>
                     Total de <Text style={styles.headerTextBold}>{total} casos</Text>.
                 </Text>
             </View>
+
             <Text style={styles.title} >Bem vindo!</Text>
             <Text style={styles.description} >Escolha um dos casos e salve uma vida</Text>
+            
             <FlatList 
             style={styles.incidentList}
             keyExtractor = {incident=> String(incident.id)}
             data = {incidents}
-            //showsVerticalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             onEndReached={loadIncidents}
             onEndReachedThreshold={0.2}
             renderItem = {({item: incident}) => (
@@ -78,7 +69,9 @@ export default function Incidents() {
                 <Text style={styles.incidentProperty}>VALOR: </Text>
                 <Text style={styles.incidentValue}>{
                 Intl.NumberFormat('pt-BR', 
-                {style: 'currency', currency: 'BRL' }).format(incident.value)}</Text>
+                {style: 'currency', currency: 'BRL' })
+                .format(incident.value)
+                }</Text>
 
                 <TouchableOpacity 
                 style={styles.detailButton} 
@@ -89,6 +82,7 @@ export default function Incidents() {
                 </View>
             )}
             />
+
         </View>
     );
 }

@@ -1,21 +1,16 @@
 import React from 'react';
 import { View, Image, TouchableOpacity, Text, Linking } from 'react-native';
-
 import { useNavigation, useRoute } from '@react-navigation/native';
-
 import logoImg from '../../assets/logo.png';
 import styles from './styles';
-
 import { Feather } from '@expo/vector-icons';
-
 import * as MailComposer from 'expo-mail-composer';
 
 export default function Details() {
+
     const navigation = useNavigation();
     const route = useRoute();
-
     const incident = route.params.incident;
-
     const message = `olá ${incident.name}, gostaria de ajudar no caso ${incident.title}, com o valor de ${Intl.NumberFormat('pt-BR',{style: 'currency', currency: 'BRL' }).format(incident.value)}`;
 
     function navigateBack(){
@@ -36,6 +31,7 @@ export default function Details() {
 
     return (
         <View style={styles.container}>
+
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <TouchableOpacity onPress={navigateBack}>
@@ -60,7 +56,7 @@ export default function Details() {
             <View style={styles.contactBox}>
                 <Text style={styles.heroTitle}>Salve o dia</Text>
                 <Text style={styles.heroTitle}>Seja o heroi</Text>
-
+                
                 <Text style={styles.heroDescription}>entre em contato</Text>
 
                 <View style={styles.actions}>
