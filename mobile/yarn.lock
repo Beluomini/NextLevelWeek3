@@ -2257,10 +2257,10 @@
   dependencies:
     nanoid "^3.1.5"
 
-"@react-navigation/stack@^5.14.3":
-  version "5.14.3"
-  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.3.tgz#3d15fcd2cf8d0d2a1248686565c6a85e2d8e1c55"
-  integrity sha512-7rHc13DHsYP7l7GcgBcLEyX2/IAuCcRZ1Iu3MtOZSayjvFXxBBYKFKw0OyY9NxOfZUdLl3Q3mLiUHVFZkHMcuA==
+"@react-navigation/stack@^5.14.4":
+  version "5.14.4"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-5.14.4.tgz#32f6717c03494f0ca6cf0dd43d8302af824de9e9"
+  integrity sha512-gQjWK8JHtVkD1p7wzjtSPuScJI0mSAk/N/gzgjQZo+rDUwgM8rOTDcVNRbtEOqCEgLQcZrZQHwhOjkrJirehjQ==
   dependencies:
     color "^3.1.3"
     react-native-iphone-x-helper "^1.3.0"
@@ -6147,7 +6147,6 @@ react-native-web@^0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.15.1.tgz#25f186a3355055a2d8d43f780de7dca673678a9e"
   integrity sha512-yUpbohpmNHeeS9fMMAUPFaYPMO2Z/a2sRwpEkAxzr/XqV2W9rFh047jFKe/rOBszAitDTCfUBg6lbyFRdbD3wQ==
-
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.7.0"
